@@ -22,7 +22,7 @@ class Admin extends Seeder
         // factory(App\Model\Admin::class)->create();
         //
         DB::table('admins')->insert([
-            'username' => 'kmrc', 'email' => 'admin@example.com','password' => bcrypt('password'), 'status' => 3
+            'username' => 'Admin', 'email' => 'admin@example.com','password' => bcrypt('password'), 'status' => 1
         ]);
        // Admin::create(['username' => 'Admin', 'email' => 'admin@example.com','password' => bcrypt('password'), 'status' => 1]);
     }

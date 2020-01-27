@@ -30,15 +30,36 @@
             </div>
 
             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+
+            <div class="form-group">
                 <label for="phone">Phone</label>
                 <input type="text" class="form-control" name="phone" id="phone" >
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="mail" id="email">
+                <label for="phone">Alt Phone</label>
+                <input type="text" class="form-control" name="alt_phone" id="phone" >
             </div>
 
+
+            <div class="form-group col-md "  data-toggle="tooltip" data-placement="top" title=" Date of Birth"> 
+                <label for="dob">DOB</label>
+                <input name="dob" type="date" class="form-control form-control-lg" id="dob" placeholder="Job Expired Date (Year-Month-Day)" autocomplete="off" value="">
+
+            </div>
+
+            <div class="form-group">
+                <label for="employer">Current Employer</label>
+                <textarea name="current_employer" rows="3" placeholder="Current Employer" id="employer"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="job">Current Job</label>
+                <textarea name="current_role" rows="2" placeholder="Current Job" id="job"></textarea>
+            </div>
 
             <div class="form-group">
                 <label for="exp">Experience</label>
@@ -55,7 +76,15 @@
             </div>
 
             <div class="form-group">
-                <label for="ed">Education</label>
+                <label for="agree">I acknowledge that the information provided above is truthful to the best * of my knowledge
+                    Agree</label>
+                <input type="checkbox" value="1" name="info_acknowledgement" id="agree">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="ed">Highest level of education attained</label>
                 <select name="education" id="ed">
 
                     <option value="">Select Education Level</option>
@@ -66,6 +95,37 @@
                     @endforeach
                 </select>
             </div>
+
+
+
+            <div class="form-group">
+                <label for="colleage">Name of university you graduated with first degree from</label>
+                <textarea name="institute" rows="2" placeholder="University Name" id="colleage"></textarea>
+            </div>
+
+            
+
+<div class="form-group">
+    <label for="colleage1">List any other degree(s) obtained including the University/Faculty/Degree Title/Grade
+        (Classification)</label>
+    <textarea name="other_degreeAndCollege" rows="2" placeholder="" id="colleage1"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="colleage3">List any other professional qualifications obtained e.g. CPA, CPS, ACCA etc.</label>
+    <textarea name="other_qualifications" rows="2" placeholder="" id="colleage3"></textarea>
+</div>
+
+
+
+<div class="form-group col-md">  
+    <label for="cv"> CV:</label>
+                                    <input type="file" name="cv" id="cv">
+    
+                                    </div>
+
+
+
 
 
             <button type="submit" class="btn btn-info" >sub</button>

@@ -284,6 +284,7 @@
                         <input name="expired_date" type="date" class="form-control form-control-lg" id="expired_date" placeholder="Job Expired Date (Year-Month-Day)" autocomplete="off" value="">
 
                     </div>
+                    
 
                   <div class="form-group col-md "  data-toggle="tooltip" data-placement="top" title="Required Degree Level">
 

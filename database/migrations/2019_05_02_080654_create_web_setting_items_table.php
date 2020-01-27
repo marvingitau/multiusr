@@ -15,7 +15,8 @@ class CreateWebSettingItemsTable extends Migration
     {
         Schema::create('web_setting_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('model_type');
+            // $table->string('model_type');
+            $table->string('type');
             $table->integer('model_id');
             $table->text('val_1')->nullable();
             $table->text('val_2')->nullable();

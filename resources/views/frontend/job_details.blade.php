@@ -54,7 +54,7 @@
                            alert('update cv & coverletter')
                         </script> -->
                         {{-- <a class="btn rounded-0 font-weight-bold text-white w-100 p-2" href="/user/apply-job/{{ $job->id }}">CONTINUE TO APPLY </a> --}}
-                        <a class="btn rounded-0 font-weight-bold text-white w-100 p-2" href="{{ route('application.form',[$job->id]) }}">CONTINUE TO APPLY </a>
+                        <a class="btn rounded-0 font-weight-bold text-white w-100 p-2" href="{{ route('application.form',[$job->id]) }}"> APPLY </a>
                         {{-- @endif --}}
                     </div>
                 </div>

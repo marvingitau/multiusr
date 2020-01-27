@@ -72,7 +72,7 @@ class JobController extends Controller
             'city_id' => [],
             'country_id' => [],
             'expired_date'=>[],
-            'required_skill'=>[],
+            // 'required_skill'=>[], 
             'skills'=>[]
             
 

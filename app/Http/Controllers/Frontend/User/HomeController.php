@@ -518,7 +518,7 @@ public function formApplication($id){
         return view('frontend.job_app_form',compact('attributes','id'));
 }
 
-public function userData(User $user,CvEducation $cvEd,$id)
+public function userData(User $user,CvEducation $cvEd,Request $request,$id)
 {
 
     // dd($id);
@@ -526,20 +526,36 @@ public function userData(User $user,CvEducation $cvEd,$id)
         'firstName'=>'required',
         'lastName'=>'',
         'phone'=>'',
-        'mail'=>'unique:users',
+        'alt_phone'=>'',
+        'email'=>'unique:users',
+        'dob'=>'',
+        'current_employer'=>'',
+        'current_role'=>'',  
         'experience'=>'',
+        'info_acknowledgement'=>'',
         'education'=>'',
+        'institute'=>'',
+        'other_degreeAndCollege'=>'',
+        'other_qualifications'=>'',
     ]);
     // dd([ 'firstName'=>$attrib['firstName'], 'lastName'=>$attrib['lastName'] ]);   experience_id
 
     // try {
-        $res=$user->create([ 'first_name'=>$attrib['firstName'], 'last_name'=>$attrib['lastName'],"email"=>$attrib['mail'],"phone"=>$attrib['phone'], 'experience_id'=>$attrib['experience']]);
-        $res1 = $cvEd->create([ 'user_id'=>$res['id'], 'degree_level_id'=>$attrib['education']]);
+        $res=$user->create([ 'first_name'=>$attrib['firstName'], 'last_name'=>$attrib['lastName'],
+        'email'=>$attrib['email'],"phone"=>$attrib['phone'], 'experience_id'=>$attrib['experience'],
+        'info_acknowledgement'=>$attrib['info_acknowledgement'],'current_role'=>$attrib['current_role'],
+        'current_employer'=>$attrib['current_employer'],'dob'=>$attrib['dob'],'alt_phone'=>$attrib['alt_phone']
+        ]);
+        $res1 = $cvEd->create([ 'user_id'=>$res['id'], 'degree_level_id'=>$attrib['education'],'institute'=>$attrib['institute'],
+        'other_degreeAndCollege'=>$attrib['other_degreeAndCollege'],'other_qualifications'=>$attrib['other_qualifications'],
+        ]);
         // dd($res1); //USER ID
         
     //   } catch (\Illuminate\Database\QueryException $e) {
         //   return redirect()->back()->with('integrity',$e->errorInfo);
     //   }
+
+
 
 
     $apply = new ApplyJob();
@@ -551,13 +567,21 @@ public function userData(User $user,CvEducation $cvEd,$id)
 
     $apply->save();
 
+    if($request->hasFile('cv') ){
+        $path = 'assets/backend/image/candidate/cv/';
+        $name = $attrib['firstName'].'_cv'.'.'.$request->file('cv')->getClientOriginalExtension();
+        @unlink($path.'/'.$name);
+        $request->file('cv')->move($path,$name);
+  
+    }
+
 
 
     // \Mail::to(auth()->user()->email)->send(  //eli
     //           new JobApplied($job)
     // );
 
-    return redirect()->back()->with('integrity',"good");
+    return redirect()->back()->withSuccess("good");
     
 }
 

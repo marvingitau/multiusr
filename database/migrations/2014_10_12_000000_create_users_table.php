@@ -51,6 +51,12 @@ class CreateUsersTable extends Migration
             $table->boolean('sms_verified_code')->default(0);
             $table->boolean('sms_send')->default(0);
             $table->boolean('status')->default(1);
+            $table->text('current_employer')->nullable(); //elis
+            $table->text('current_role')->nullable();  //elis
+            $table->tinyInteger('info_acknowledgement')->default(0);  //elis
+            $table->string('alt_phone')->nullable();  //elis
+
+            
             $table->rememberToken();
             $table->timestamps();
         });

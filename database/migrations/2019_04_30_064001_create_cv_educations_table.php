@@ -26,6 +26,8 @@ class CreateCvEducationsTable extends Migration
             $table->year('passing_year')->nullable();
             $table->string('result')->nullable();
             $table->unsignedInteger('result_type_id')->nullable();
+            $table->text('other_qualifications')->nullable();  // cpa, cisco etc
+            $table->longText('other_degreeAndCollege')->nullable();
             $table->timestamps();
         });
     }

@@ -259,6 +259,8 @@ class UserController extends Controller
        ->join('job_attributs','cv_educations.degree_level_id','job_attributs.id')
        ->get();
      
+       dd($result);
+
        $headers = [
         "Content-type"        => "text/csv",
         "Content-Disposition" => "attachment; filename=output_data.csv", // <- name of file
@@ -266,7 +268,7 @@ class UserController extends Controller
         "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
         "Expires"             => "0",
         ];
-        $columns  = ['from_user', 'to_user', 'educ','job'];
+        $columns  = ['user_id', 'user_email', 'first_name','job'];
         $callback = function () use ($result, $columns) {
             $file = fopen('php://output', 'w'); //<-here. name of file is written in headers
             fputcsv($file, $columns);

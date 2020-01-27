@@ -359,19 +359,18 @@
                     <div class="form-row">
 
                         <div class="form-group col-md "  data-toggle="tooltip" data-placement="top" title="Required Skills">
-
-                            <!-- <select name="required_skill" type="text" class="form-control form-control-lg" multiple="" id="skill">
+                                 {{-- <select name="required_skill" type="text" class="form-control form-control-lg" multiple="" id="skill">
 
                                 <option value="">Select Required Skills</option>
 
-                                {{-- @foreach($attributes->getAttr('skills') as $skills)
+                                @foreach($attributes->getAttr('skills') as $skills)
 
                                     <option value="{{$skills->id}}" >{{$skills->name}}</option>
 
-                                @endforeach --}}
+                                @endforeach
                                 
 
-                            </select> -->
+                            </select>  --}}
                             <textarea class="form-control" name="skills" id="" rows="3"></textarea>
                             <!-- <input type="text" id="" class="form-control" name="skills" placeholder="Enter Required Skills"> -->
 
